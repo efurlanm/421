@@ -1,4 +1,4 @@
-# My personal CAP421 course repository
+# My personal repository and course notes
 
 This repository contains my work for this [course at INPE](http://www.inpe.br/posgraduacao/). The CAP421 course is part of the [Applied Artificial Intelligence Track](http://www.inpe.br/posgraduacao/cap/catalogo-disciplinas.php). Courses that are part of the track:
 
