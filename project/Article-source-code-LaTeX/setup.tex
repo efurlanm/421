@@ -1,0 +1,74 @@
+\usepackage{cite}
+% \usepackage{amsmath,amssymb,amsfonts}
+\usepackage{amsmath}% equation formatting
+% \usepackage{algorithmic}% Algorithms
+\usepackage{graphicx}
+\graphicspath{{img/}}
+% \usepackage{textcomp}% Text Companion fonts
+\usepackage[usenames,dvipsnames]{xcolor}
+\def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
+    T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
+
+\usepackage[cmintegrals]{newtxmath}% equation font similar to the rest
+\usepackage{microtype}
+\usepackage[T1]{fontenc} %set the font (output) encoding
+% \usepackage[brazil]{babel} %"sumário", "capítulo", etc.
+\usepackage{hyphenat}
+% \hyphenation{mate-mática recu-perar}
+\usepackage{cite}
+\usepackage{booktabs}
+\usepackage{listings}
+\makeatletter
+\let\@ORGmakecaption\@makecaption
+\long\def\@makecaption#1#2{\@ORGmakecaption{#1}{#2}\vskip\belowcaptionskip\relax}
+\makeatother
+\lstdefinestyle{mystyle}{
+frame               = single,
+rulecolor           = \color{gray},
+basicstyle          = \ttfamily\scriptsize,
+belowcaptionskip    = 8pt,
+aboveskip           = 8pt,
+belowskip           = 8pt,
+columns             = fullflexible,
+breakatwhitespace   = false,
+breaklines          = true,
+keepspaces          = true,
+showspaces          = false,
+showstringspaces    = false,
+inputencoding       = utf8,
+extendedchars       = true,
+literate            =
+{á}{{\'a}}1 {é}{{\'e}}1 {í}{{\'i}}1 {ó}{{\'o}}1 {ú}{{\'u}}1
+{Á}{{\'A}}1 {É}{{\'E}}1 {Í}{{\'I}}1 {Ó}{{\'O}}1 {Ú}{{\'U}}1
+{à}{{\`a}}1 {è}{{\`e}}1 {ì}{{\`i}}1 {ò}{{\`o}}1 {ù}{{\`u}}1
+{À}{{\`A}}1 {È}{{\'E}}1 {Ì}{{\`I}}1 {Ò}{{\`O}}1 {Ù}{{\`U}}1
+{ä}{{\"a}}1 {ë}{{\"e}}1 {ï}{{\"i}}1 {ö}{{\"o}}1 {ü}{{\"u}}1
+{Ä}{{\"A}}1 {Ë}{{\"E}}1 {Ï}{{\"I}}1 {Ö}{{\"O}}1 {Ü}{{\"U}}1
+{â}{{\^a}}1 {ê}{{\^e}}1 {î}{{\^i}}1 {ô}{{\^o}}1 {û}{{\^u}}1
+{Â}{{\^A}}1 {Ê}{{\^E}}1 {Î}{{\^I}}1 {Ô}{{\^O}}1 {Û}{{\^U}}1
+{œ}{{\oe}}1 {Œ}{{\OE}}1 {æ}{{\ae}}1 {Æ}{{\AE}}1 {ß}{{\ss}}1
+{ç}{{\c c}}1 {Ç}{{\c C}}1 {ø}{{\o}}1 {å}{{\r a}}1 {Å}{{\r A}}1
+{€}{{\EUR}}1 {£}{{\pounds}}1 {ã}{{\~a}}1 {Ã}{{\~A}}1,
+showtabs=false,
+tabsize=2,
+}
+\lstset{}
+\lstset{style=mystyle}
+
+\usepackage{xurl}
+\usepackage[colorlinks,urlcolor=blue]{hyperref}
+\renewcommand{\figureautorefname}{Fig.}%
+% \renewcommand{\tableautorefname}{Tabela}%
+% \renewcommand{\equationautorefname}{Equação}%
+% \renewcommand{\lstlistingname}{Listagem}%
+
+\usepackage{placeins}% \FloatBarrier
+\usepackage[bottom]{footmisc}% \footnote
+%\setlength{\skip\footins}{.5cm}
+
+\usepackage{lipsum}
+
+%----------------------------------------
+% user defined commands
+%----------------------------------------
+\newcommand{\F}[1]{\footnote{\url{#1}}}
