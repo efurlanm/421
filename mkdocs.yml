@@ -1,0 +1,45 @@
+site_name: 1D Burgers PINN GQM
+site_author: Eduardo Furlan
+copyright: CC BY 4.0 License
+repo_name: "421"
+repo_url: http://github.com/efurlanm/421/
+docs_dir: docs-src
+site_dir: docs
+site_url: ""
+use_directory_urls: false
+theme:
+    name: material
+    font: false
+# https://squidfunk.github.io/mkdocs-material/setup/changing-the-colors/
+    palette:
+        primary: cyan
+        accent: cyan
+    features:
+        - header.autohide
+plugins:
+    - offline
+    - search
+markdown_extensions:
+    - pymdownx.highlight:
+        anchor_linenums: true
+        line_spans: __span
+        pygments_lang_class: true
+    - pymdownx.inlinehilite
+    - pymdownx.snippets
+    - pymdownx.superfences
+    - pymdownx.arithmatex:
+        generic: true
+    - def_list
+    - md_in_html
+    - tables
+extra_javascript:
+    - javascripts/katex/katex.min.js
+    - javascripts/katex/contrib/auto-render.min.js
+    - javascripts/katex.js
+extra_css:
+    - javascripts/katex/katex.min.css
+    - css/extra.css
+exclude_docs: |
+    .ipynb_checkpoints
+    .git
+

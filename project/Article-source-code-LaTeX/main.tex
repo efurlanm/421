@@ -96,8 +96,7 @@ PINNs can be considered neural networks for supervised learning problems, as pro
 The proposed test case requires the solution of a particular one-dimensional viscous Burger equation with Dirichlet boundary condition (BC) and initial condition (IC), which estimates the velocity field $u$ along time (\autoref {eq:burg}). Training data for the PINN is given by a set of CPs corresponding to the velocity field in different times are randomly generated within the considered domain.
  
 In the train phase, the network then estimates a solution $u(t,x)$. 
-The function employed by the PINN $f(t,x)$ (\autoref {eq:ftx}) is derived from the known viscous Burgers equation, and allows to calculate the loss function.  
-%and implemented using Python and the library TensorFlow. 
+The function employed by the PINN $f(t,x)$ (\autoref {eq:ftx}) is derived from the known viscous Burgers equation, and allows to calculate the loss function.
 In the following equations, $u$ is the velocity, the coefficient ${(100\pi)}^{-1}$ is the kinematic viscosity, and the subscripts denote partial differentiation in time and space, respectively, as
 $u_t$ (which denotes $\frac{du}{dt}$), 
 $u_x$ (which denotes $\frac{du}{dx}$), and 
@@ -131,7 +130,6 @@ $$ MSE_f = \frac{1}{N_{CP}}\sum_{i=1}^{N_{CP}}|f(t^i, x^i)|^2  \quad \text{(CP)}
 
 A Fortran 90 implementation of the GQM method was used to generate the full dataset of the velocity field, which was taken as reference solution in the comparison with the PINN solution.
  The GQM dataset has 100 time steps in the interval [0, 99] and 256 one-dimensional grid points in the interval [-1, 1], defining a velocity field $u(x,t)$ subjected to the ICs and BCs shown in \autoref {eq:burg}. 
-%A number of $N_f=10,000$ points we randomly sampled from this dataset as CPs.
 
 The GQM method is an iterative numerical algorithm that approximates the definite integral of a function as a weighted sum of the function values at specified points within the domain of integration \cite{Burkardt2013}. The order of quadrature rule was set to 8. The loops corresponding to the compute-intensive part of the code were parallelized with the OpenMP 3.1 library using the \lstinline{!$OMP PARALLEL DO$} directive, since there is no data dependency between loop iterations. The F90 code was compiled with GNU 4.8.5 setting the -O3 optimization flag. The code was also executed using CPU cores with 1, 4, 8, 16 and 24 OpenMP threads.   
 
@@ -141,8 +139,7 @@ The GQM method is an iterative numerical algorithm that approximates the definit
 
 The particular architecture of the PINN implemented in this work is a feed-forward MLP with a 2-neuron input layer, eight 20-neuron hidden layers, and a single-neuron output layer. The loss function is the Mean Square Error (MSE). The minimization of the loss function is performed by an optimization method like the widespread Limited-memory BFGS (L-BFGS) algorithm, a quasi-Newton method that approximates the Broyden–Fletcher–Goldfarb–Shanno algorithm (BFGS). All hidden layers employ the hyperbolic tangent as the activation function.
 
-The PINN implementation was based on the work of Raissi et al. (2019) \cite{Raissi2019} and uses 
-the TensorFlow\F{http://www.tensorflow.org} 1.15 library and the Python 3.7 interpreter. Code snippets of the TensorFlow library are shown in \autoref {lst:utx} and \autoref {lst:ftx}. Note that the snippets do not show the implementation of the BCs, ICs and other details. The code was also executed using CPU cores Tests with 1, 4, 8, 16 and 24 OpenMP threads.   
+The PINN implementation was based on the work of Raissi et al. (2019) \cite{Raissi2019} and uses the TensorFlow\F{http://www.tensorflow.org} 1.15 library and the Python 3.7 interpreter. Code snippets of the TensorFlow library are shown in \autoref {lst:utx} and \autoref {lst:ftx}. Note that the snippets do not show the implementation of the BCs, ICs and other details. The code was also executed using CPU cores Tests with 1, 4, 8, 16 and 24 OpenMP threads.
 
 \begin{lstlisting}[language=Python, label=lst:utx, caption={Code snippet that implements $u(t,x)$}]
 def u(t, x):
@@ -164,7 +161,6 @@ def f(t, x):
 %----------------------------------------
 \section{Results}\label{sec:resu}
 %----------------------------------------
-% Analysis of the Parallel Performance for the Test Problem
 
 The PINN solution $u(t,x)$ is shown in \autoref{fig:bur1}, with the time $t$ in the horizontal axis  and the spatial coordinate $x$ in the vertical axis. The red marks in the boundaries of the graph represent the 100 randomly assigned points (BC+IC) used for training. The 10,000 CPs randomly generated are not shown. The color scale refers to the velocity $u(x,t)$. The dashed vertical lines refer to 2 specific snapshots ($t=0.25$ and $t=0.75$). \autoref {fig:bur2} shows the superimposed solutions for PINN and GQM for these 2 snapshots, which are quite equivalent.
 
@@ -174,7 +170,6 @@ The PINN solution $u(t,x)$ is shown in \autoref{fig:bur1}, with the time $t$ in 
 \caption{PINN solution for the velocity $u(t,x)$. The horizontal axis denotes time $t$, and the vertical axis, the coordinate $x$. The red marks in the boundaries of the graph represent the 100 randomly assigned points (BC+IC) used for training. The color scale refers to the velocity. The dashed vertical lines refer to 2 snapshots ($t=0.25$ and $t=0.75$).} 
 \label{fig:bur1}
 \end{figure}
-
 
 \begin{figure}[htb]
 \centering
@@ -187,8 +182,6 @@ The PINN solution $u(t,x)$ is shown in \autoref{fig:bur1}, with the time $t$ in 
 \centering
 \caption{Processing times, speedups and parallel efficiencies for the PINN and GQM solutions for different numbers of OpenMP threads. The GQM single-thread execution time was taken as a reference, highlighted in blue. Best values are highlighted in red.}
 \label{tab:resu}
-% a tabela está no Google Docs: https://docs.google.com/spreadsheets/d/1yQdTPwtr5UYZEvoaSrflA00kdqxVqdQP4wzRpYuj-EM/edit?usp=sharing
-% depois de alterada, basta copiar para o arquivo tab_resu.tex
 \input{tbl/tab_resu}
 \end{table}
 
@@ -222,12 +215,6 @@ The PINN solution $u(t,x)$ is shown in \autoref{fig:bur1}, with the time $t$ in 
 %
 This work compares the solutions of a one-dimensional viscous Burgers’ equation of a test problem using a Physics Informed Neural Network (PINN) and a numerical Gaussian Quadrature Method (GQM) method. The Burgers' equation is a partial differential equation (PDE) with derivatives in both space and time, which is commonly solved by a numerical method, as the GQM. A comparison of the accuracy and required processing time of both solutions executed in the LNCC Santos Dumont supercomputer is also presented for different number of OpenMP threads using CPU cores. The GQM presented much lower processing times, and better speedups and parallel efficiencies. As future work, it is intended to exploit other PINN architectures and numerical methods, as well as taking advantage of GPU use, mainly for the PINN.
 
-
-
-
-
-
-
 % The asterisk symbol (*) is used to indicate that a environment does not produce numbering
 %----------------------------------------
 % \section*{References}
@@ -240,8 +227,3 @@ This work compares the solutions of a one-dimensional viscous Burgers’ equatio
 %========================================
 \end{document}
 %========================================
-
-
-
-
-
