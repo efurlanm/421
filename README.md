@@ -5,7 +5,7 @@
 This repository contains my work for this [course at INPE](http://www.inpe.br/posgraduacao/). The CAP421 course is part of the [Applied Artificial Intelligence Track](http://www.inpe.br/posgraduacao/cap/catalogo-disciplinas.php). 
 
 
-# Course summary
+## Course summary
 
 Definition and applications of Deep Learning. Basics of Digital Image Processing. Convolution: Padding, Filter Dimension, Stride, Dilation. Review of Multilayer Perceptron Neural Networks with Backpropagation Algorithm. Loss Functions and Optimizers. Convolutional Neural Networks (CNNs). Convolutional, Pooling, and Fully Connected Layers. Activation Functions. Batch Normalization. Dropout. Learning Transfer. Data Augmentation. Hyperparameter Tuning. Examples of CNN Architectures. Recurrent Neural Networks (RNNs). Generative Models. Generative Adversarial Networks (GANs). Deep Reinforcement Learning.
 
@@ -15,7 +15,7 @@ Definition and applications of Deep Learning. Basics of Digital Image Processing
 - [manuscript](manuscript) - Academic manuscript of the project developed in the course.
 
 
-# References
+## References
 
 - GOODFELLOW, I.; BENGIO, Y.; COURVILLE, A. [Deep learning](https://www.google.com.br/books/edition/Deep_Learning/Np9SDQAAQBAJ). Cambridge, Massachusetts: The MIT Press, 2016. ISBN: 9780262035613. Available at: https://www.deeplearningbook.org
 - CHOLLET, F. Deep Learning with Python. Shelter Island, New York: [s. n.], 2018. E-book.
