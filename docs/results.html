@@ -11,8 +11,10 @@
       
       
       
+        <link rel="prev" href="material.html">
       
-        <link rel="next" href="introduction.html">
+      
+        <link rel="next" href="conclusions.html">
       
       
       <link rel="icon" href="assets/images/favicon.png">
@@ -20,7 +22,7 @@
     
     
       
-        <title>1D Burgers PINN GQM</title>
+        <title>3. Results - 1D Burgers PINN GQM</title>
       
     
     
@@ -73,11 +75,6 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
-        
-        <a href="#solution-of-a-one-dimensional-viscous-burgers-equation-using-a-physics-informed-neural-network-and-a-gaussian-quadrature-method" class="md-skip">
-          Skip to content
-        </a>
-      
     </div>
     <div data-md-component="announce">
       
@@ -110,7 +107,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Abstract
+              3. Results
             
           </span>
         </div>
@@ -224,19 +221,10 @@
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="index.html" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="index.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -245,7 +233,6 @@
   
 
       </a>
-      
     </li>
   
 
@@ -294,10 +281,17 @@
       
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="results.html" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+      <a href="results.html" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -306,6 +300,7 @@
   
 
       </a>
+      
     </li>
   
 
@@ -367,8 +362,6 @@
   
   
   
-    
-  
   
 </nav>
                   </div>
@@ -386,20 +379,62 @@
   
 
 
-<p><center></p>
-<h1 id="solution-of-a-one-dimensional-viscous-burgers-equation-using-a-physics-informed-neural-network-and-a-gaussian-quadrature-method">Solution of a One-Dimensional Viscous Burgers' Equation Using a Physics-Informed Neural Network and a Gaussian Quadrature Method</h1>
-<p></center></p>
-<p><center>
-Eduardo F. Miranda<br />
-ORCID: 0000-0003-1200-794X
-</center></p>
-<p><small>
-Last edited: 2024-02-19<br />
-Repository: <a href="http://efurlanm.github.io/421/">http://efurlanm.github.io/421/</a>
-</small>
-<br>
-<br></p>
-<p><strong>Abstract</strong>. This work compares the solutions of a one-dimensional viscous Burgers’ equation of a test problem using a Physics Informed Neural Network (PINN) and a numerical Gaussian Quadrature Method (GQM) method. The Burgers' equation is a partial differential equation (PDE) with derivatives in both space and time, which is commonly solved by a numerical method. However, recent works have proposed the solution by means of Artificial Neural Networks (ANNs). Since the number of sample/collocation points (in space and time) required for an efficient training of the ANN would be too high, PINNs were proposed to allow the use of less sample points by embedding the related equation of physics into the simulation. This work compares the solutions of the one-dimensional viscosity Burgers' equation for a test problem obtained by the PINN and by the GQM methods. Accuracy and required processing time of the solutions, both executed in the LNCC Santos Dumont supercomputer, are also presented.</p>
+  <h1>3. Results</h1>
+
+<p>The PINN solution <span class="arithmatex">\(u(t,x)\)</span> is shown in <a href="#fig:bur1">Figure&nbsp;1</a>, with the time <span class="arithmatex">\(t\)</span> in the horizontal axis  and the spatial coordinate <span class="arithmatex">\(x\)</span> in the vertical axis. The red marks in the boundaries of the graph represent the 100 randomly assigned points (BC+IC) used for training. The 10,000 CPs randomly generated are not shown. The color scale refers to the velocity <span class="arithmatex">\(u(x,t)\)</span>. The dashed vertical lines refer to 2 specific snapshots (<span class="arithmatex">\(t=0.25\)</span> and <span class="arithmatex">\(t=0.75\)</span>). <a href="#fig:bur2">Figure&nbsp;2</a> shows the superimposed solutions for PINN and GQM for these 2 snapshots, which are quite equivalent.</p>
+<figure id="fig:bur1">
+<img src="img/burgers01.png">
+<figcaption>
+Figure 1. PINN solution for the velocity $u(t,x)$. The horizontal axis denotes time $t$, and the vertical axis, the coordinate $x$. The red marks in the boundaries of the graph represent the 100 randomly assigned points (BC+IC) used for training. The color scale refers to the velocity. The dashed vertical lines refer to 2 snapshots ($t=0.25$ and $t=0.75$).
+</figcaption>
+</figure>
+
+<figure id="fig:bur2">
+<img src="img/burgers02.png">
+<figcaption>
+Figure 2. Superimposed solutions for PINN and GQM for the $t=0.25$ and $t=0.75$ snapshots. PINN solution is labeled as Prediction (in <span style="color:orange">orange</span>), and GQM solution is labeled as Exact (in <span style="color:blue">blue</span>).
+</figcaption>
+</figure>
+
+<p><a href="#tab:resu">Table&nbsp;1</a> shows the processing times for the PINN and GQM solutions. PINN time is splitted into training time (Train) and prediction time (Predict). The singe-thread runtime of the GQM implementation was taken as reference. In all cases, the GQM implementation achieved the best performance, i.e. required less processing times, presented better speedups and parallel efficiencies, even if considering only the PINN prediction time.</p>
+<figure id="tab:resu">
+<figcaption>
+Table 1. Processing times, speedups and parallel efficiencies for the PINN and GQM solutions for different numbers of OpenMP threads. The GQM single-thread execution time was taken as a reference, highlighted in blue. Best values are highlighted in red.
+</figcaption>
+<center>
+<img src="img/tab_resu.svg" width="65%">
+</center>
+</figure>
+
+<p><br></p>
+<figure id="fig:time">
+<figcaption>
+Figure 3. Processing times (seconds) in function of number of OpenMP threads for the GQM and PINN implementations. "Train" refer to the PINN training phase, while "Predict" refers to the PINN test/prediction phase (for convenience, times above 0.1 seconds are not shown).
+</figcaption>
+<center>
+<img src="img/time.svg">
+</center>
+</figure>
+
+<p><br></p>
+<figure id="fig:spee">
+<figcaption>
+Figure 4. Speedups in function of the number of OpenMP threads for the GQM and PINN implementations. The dotted line indicates the linear speedup. "Train" refer to the PINN training phase, while "Predict" refers to the PINN test/prediction phase.
+</figcaption>
+<center>
+<img src="img/speedup.svg">
+</center>
+</figure>
+
+<p><br></p>
+<figure id="fig:effi">
+<figcaption>
+Figure 5. Parallel efficiencies in function of the number of OpenMP threads for the GQM and PINN implementations. "Train" refer to the PINN training phase, while "Predict" refers to the PINN test/prediction phase.
+</figcaption>
+<center>
+<img src="img/efficience.svg">
+</center>
+</figure>
 
 
 

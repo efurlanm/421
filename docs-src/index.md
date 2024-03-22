@@ -1,6 +1,6 @@
-<h1 style="hyphens: auto; text-align: center;">
-Solution of a One-Dimensional Viscous Burgers' Equation Using a Physics-Informed Neural Network and a Gaussian Quadrature Method
-</h1>
+<center>
+# Solution of a One-Dimensional Viscous Burgers' Equation Using a Physics-Informed Neural Network and a Gaussian Quadrature Method
+</center>
 
 <center>
 Eduardo F. Miranda  

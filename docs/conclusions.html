@@ -11,8 +11,10 @@
       
       
       
+        <link rel="prev" href="results.html">
       
-        <link rel="next" href="introduction.html">
+      
+        <link rel="next" href="references.html">
       
       
       <link rel="icon" href="assets/images/favicon.png">
@@ -20,7 +22,7 @@
     
     
       
-        <title>1D Burgers PINN GQM</title>
+        <title>4. Conclusions - 1D Burgers PINN GQM</title>
       
     
     
@@ -73,11 +75,6 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
-        
-        <a href="#solution-of-a-one-dimensional-viscous-burgers-equation-using-a-physics-informed-neural-network-and-a-gaussian-quadrature-method" class="md-skip">
-          Skip to content
-        </a>
-      
     </div>
     <div data-md-component="announce">
       
@@ -110,7 +107,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Abstract
+              4. Conclusions
             
           </span>
         </div>
@@ -224,19 +221,10 @@
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="index.html" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="index.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -245,7 +233,6 @@
   
 
       </a>
-      
     </li>
   
 
@@ -314,10 +301,17 @@
       
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="conclusions.html" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+      <a href="conclusions.html" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -326,6 +320,7 @@
   
 
       </a>
+      
     </li>
   
 
@@ -367,8 +362,6 @@
   
   
   
-    
-  
   
 </nav>
                   </div>
@@ -386,20 +379,9 @@
   
 
 
-<p><center></p>
-<h1 id="solution-of-a-one-dimensional-viscous-burgers-equation-using-a-physics-informed-neural-network-and-a-gaussian-quadrature-method">Solution of a One-Dimensional Viscous Burgers' Equation Using a Physics-Informed Neural Network and a Gaussian Quadrature Method</h1>
-<p></center></p>
-<p><center>
-Eduardo F. Miranda<br />
-ORCID: 0000-0003-1200-794X
-</center></p>
-<p><small>
-Last edited: 2024-02-19<br />
-Repository: <a href="http://efurlanm.github.io/421/">http://efurlanm.github.io/421/</a>
-</small>
-<br>
-<br></p>
-<p><strong>Abstract</strong>. This work compares the solutions of a one-dimensional viscous Burgers’ equation of a test problem using a Physics Informed Neural Network (PINN) and a numerical Gaussian Quadrature Method (GQM) method. The Burgers' equation is a partial differential equation (PDE) with derivatives in both space and time, which is commonly solved by a numerical method. However, recent works have proposed the solution by means of Artificial Neural Networks (ANNs). Since the number of sample/collocation points (in space and time) required for an efficient training of the ANN would be too high, PINNs were proposed to allow the use of less sample points by embedding the related equation of physics into the simulation. This work compares the solutions of the one-dimensional viscosity Burgers' equation for a test problem obtained by the PINN and by the GQM methods. Accuracy and required processing time of the solutions, both executed in the LNCC Santos Dumont supercomputer, are also presented.</p>
+  <h1>4. Conclusions</h1>
+
+<p>This work compares the solutions of a one-dimensional viscous Burgers’ equation of a test problem using a Physics Informed Neural Network (PINN) and a numerical Gaussian Quadrature Method (GQM) method. The Burgers' equation is a partial differential equation (PDE) with derivatives in both space and time, which is commonly solved by a numerical method, as the GQM. A comparison of the accuracy and required processing time of both solutions executed in the LNCC Santos Dumont supercomputer is also presented for different number of OpenMP threads using CPU cores. The GQM presented much lower processing times, and better speedups and parallel efficiencies. As future work, it is intended to exploit other PINN architectures and numerical methods, as well as taking advantage of GPU use, mainly for the PINN.</p>
 
 
 

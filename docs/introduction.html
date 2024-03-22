@@ -11,8 +11,10 @@
       
       
       
+        <link rel="prev" href="index.html">
       
-        <link rel="next" href="introduction.html">
+      
+        <link rel="next" href="material.html">
       
       
       <link rel="icon" href="assets/images/favicon.png">
@@ -20,7 +22,7 @@
     
     
       
-        <title>1D Burgers PINN GQM</title>
+        <title>1. Introduction - 1D Burgers PINN GQM</title>
       
     
     
@@ -73,11 +75,6 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
-        
-        <a href="#solution-of-a-one-dimensional-viscous-burgers-equation-using-a-physics-informed-neural-network-and-a-gaussian-quadrature-method" class="md-skip">
-          Skip to content
-        </a>
-      
     </div>
     <div data-md-component="announce">
       
@@ -110,7 +107,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Abstract
+              1. Introduction
             
           </span>
         </div>
@@ -224,6 +221,26 @@
       
   
   
+  
+  
+    <li class="md-nav__item">
+      <a href="index.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Abstract
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
     
   
   
@@ -233,31 +250,8 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
-        
       
-      
-      <a href="index.html" class="md-nav__link md-nav__link--active">
-        
-  
-  <span class="md-ellipsis">
-    Abstract
-  </span>
-  
-
-      </a>
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="introduction.html" class="md-nav__link">
+      <a href="introduction.html" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -266,6 +260,7 @@
   
 
       </a>
+      
     </li>
   
 
@@ -367,8 +362,6 @@
   
   
   
-    
-  
   
 </nav>
                   </div>
@@ -386,20 +379,13 @@
   
 
 
-<p><center></p>
-<h1 id="solution-of-a-one-dimensional-viscous-burgers-equation-using-a-physics-informed-neural-network-and-a-gaussian-quadrature-method">Solution of a One-Dimensional Viscous Burgers' Equation Using a Physics-Informed Neural Network and a Gaussian Quadrature Method</h1>
-<p></center></p>
-<p><center>
-Eduardo F. Miranda<br />
-ORCID: 0000-0003-1200-794X
-</center></p>
-<p><small>
-Last edited: 2024-02-19<br />
-Repository: <a href="http://efurlanm.github.io/421/">http://efurlanm.github.io/421/</a>
-</small>
-<br>
-<br></p>
-<p><strong>Abstract</strong>. This work compares the solutions of a one-dimensional viscous Burgers’ equation of a test problem using a Physics Informed Neural Network (PINN) and a numerical Gaussian Quadrature Method (GQM) method. The Burgers' equation is a partial differential equation (PDE) with derivatives in both space and time, which is commonly solved by a numerical method. However, recent works have proposed the solution by means of Artificial Neural Networks (ANNs). Since the number of sample/collocation points (in space and time) required for an efficient training of the ANN would be too high, PINNs were proposed to allow the use of less sample points by embedding the related equation of physics into the simulation. This work compares the solutions of the one-dimensional viscosity Burgers' equation for a test problem obtained by the PINN and by the GQM methods. Accuracy and required processing time of the solutions, both executed in the LNCC Santos Dumont supercomputer, are also presented.</p>
+  <h1>1. Introduction</h1>
+
+<p>Many simulations are mathematically modeled by partial differential equations (PDEs), which have derivatives in space and time. However, the coefficients of these derivatives are unknowns, and the PDEs are usually solved by a numerical method, like the Finite Difference Method (FDM) or the numerical Gaussian Quadrature Method (GQM). Recent works proposed to solve PDEs using Artificial Neural Networks (ANN), which are Machine Learning (ML) algorithms. The universal approximation theorem states that a neural network can approximate any continuous function, provided the network has a sufficient number of hidden layer and that employs non-linear activation functions. This approach requires to know a large set of sample points in space and time in order to perform the training of the neural network, and such sample points are named Collocation Points (CPs).
+Since the required number of CPs would be too high, Physics Informed Neural Networks (PINNs) were proposed to allow the use of less CPs by including in the ANN the underlying physical laws related to the simulation.</p>
+<p>This work compares the solutions of the viscous Burgers equation, a PDE with derivatives in both space and time, for a test problem, by a PINN and a GQM. This equation models the velocity of a viscous fluid, being a particular case of the Burgers equation for fluid mechanics. The corresponding PINN and GQM solutions are compared in terms of accuracy and processing time, both executed in the Santos Dumont supercomputer. Tests were executed in a Bull B710 processing node of the supercomputer Santos Dumont of the LNCC (National Laboratory of Scientific Computing). It has two Intel Xeon E5-2695v2 Ivy Bridge 2.4 GHz 12-core processors (total of 24 cores), and 64 GB of main memory.</p>
+<p>The solution of PDEs by PINNs is relatively recent and acquiring knowledge in such approach may be useful for solving PDEs in some specific modules of numerical models used at CPTEC/INPE for weather and climate forecast. </p>
+<p>The code is available at <a href="https://github.com/efurlanm/421/tree/main/project">https://github.com/efurlanm/421/tree/main/project</a></p>
 
 
 
