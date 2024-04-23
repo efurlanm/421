@@ -4,10 +4,10 @@ Unlike standard numerical methods, the PINN solution can be obtained without spe
 
 PINNs can be considered neural networks for supervised learning problems, as proposed here. However, PINNs can also be used as agents for reinforcement learning (RL) [[2](references.md#Cuomo2022)]. The most common PINN architectures are Multi-layer Perceptrons (MLPs), Convolutional Neural Networks (CNNs) and Recurrent Neural Networks (RNNs). Newer architectures are Auto-Encoder (AE), Deep Belief Network (DBN), Generative Adversarial Network (GAN) and Bayesian Deep Learning (BDL) [[2](references.md#Cuomo2022)]. 
 
-The proposed test case requires the solution of a particular one-dimensional viscous Burger equation with Dirichlet boundary condition (BC) and initial condition (IC), which estimates the velocity field $u$ along time ([Equation&nbsp;1](eq:burg)). Training data for the PINN is given by a set of CPs corresponding to the velocity field in different times are randomly generated within the considered domain.
+The proposed test case requires the solution of a particular one-dimensional viscous Burger equation with Dirichlet boundary condition (BC) and initial condition (IC), which estimates the velocity field $u$ along time ([Equation&nbsp;1](#eq:burg)). Training data for the PINN is given by a set of CPs corresponding to the velocity field in different times are randomly generated within the considered domain.
  
 In the train phase, the network then estimates a solution $u(t,x)$.
-The function employed by the PINN $f(t,x)$ ([Equation&nbsp;2](eq:ftx)) is derived from the known viscous Burgers equation, and allows to calculate the loss function.
+The function employed by the PINN $f(t,x)$ ([Equation&nbsp;2](#eq:ftx)) is derived from the known viscous Burgers equation, and allows to calculate the loss function.
 In the following equations, $u$ is the velocity, the coefficient ${(100\pi)}^{-1}$ is the kinematic viscosity, and the subscripts denote partial differentiation in time and space, respectively, as
 $u_t$ (which denotes $\frac{du}{dt}$),
 $u_x$ (which denotes $\frac{du}{dx}$), and
@@ -21,7 +21,7 @@ $$
 $$ \nonumber u(0, x) = - sen(\pi x), \quad \ \ \text{(IC)} $$
 $$ \nonumber u(t, -1) = u(t, 1) = 0. \quad \text{(BC)} $$
 
-The viscous Burguers equation is employed to evaluate the error $f$ of the solution $u(t,x)$ estimated by the PINN, as shown in [Equation&nbsp;2](eq:ftx).
+The viscous Burguers equation is employed to evaluate the error $f$ of the solution $u(t,x)$ estimated by the PINN, as shown in [Equation&nbsp;2](#eq:ftx).
 
 <span id='eq:ftx'></span>
 $$
@@ -29,7 +29,7 @@ f := u_t + uu_x - {(100\pi)}^{-1}u_{xx}
 \tag{2}
 $$
 
-In this work, the PINN loss function to be minimized is given by the mean squared error ([Equation&nbsp;3](eq:mse)) of two components, $MSE_u$, which embeds the error considering ICs and BCs, and $MSE_f$, which embeds the errors considering the set of CPs, where $t$ is the time step, and $x$ is the one-dimension coordinate. 
+In this work, the PINN loss function to be minimized is given by the mean squared error ([Equation&nbsp;3](#eq:mse)) of two components, $MSE_u$, which embeds the error considering ICs and BCs, and $MSE_f$, which embeds the errors considering the set of CPs, where $t$ is the time step, and $x$ is the one-dimension coordinate. 
 
 <span id='eq:mse'></span>
 $$
@@ -44,7 +44,7 @@ $$ MSE_f = \frac{1}{N_{CP}}\sum_{i=1}^{N_{CP}}|f(t^i, x^i)|^2  \quad \text{(CP)}
 ## A. Numerical GQM Implementation of the Test Problem
 
 A Fortran 90 implementation of the GQM method was used to generate the full dataset of the velocity field, which was taken as reference solution in the comparison with the PINN solution.
-The GQM dataset has 100 time steps in the interval [0, 99] and 256 one-dimensional grid points in the interval [-1, 1], defining a velocity field $u(x,t)$ subjected to the ICs and BCs shown in [Equation&nbsp;1](eq:burg).
+The GQM dataset has 100 time steps in the interval [0, 99] and 256 one-dimensional grid points in the interval [-1, 1], defining a velocity field $u(x,t)$ subjected to the ICs and BCs shown in [Equation&nbsp;1](#eq:burg).
 
 The GQM method is an iterative numerical algorithm that approximates the definite integral of a function as a weighted sum of the function values at specified points within the domain of integration [[3](references.md#Burkardt2013)]. The order of quadrature rule was set to 8. The loops corresponding to the compute-intensive part of the code were parallelized with the OpenMP 3.1 library using the ```!$OMP PARALLEL DO$``` directive, since there is no data dependency between loop iterations. The F90 code was compiled with GNU 4.8.5 setting the -O3 optimization flag. The code was also executed using CPU cores with 1, 4, 8, 16 and 24 OpenMP threads.
 
