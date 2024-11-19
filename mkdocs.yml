@@ -1,42 +1,42 @@
 site_name: 1D Burgers PINN GQM
 site_author: Eduardo Furlan
+site_url: https://efurlanm.github.io/421/
 copyright: CC BY 4.0 License
 repo_name: "421"
 repo_url: http://github.com/efurlanm/421/
 docs_dir: docs-src
 site_dir: docs
-use_directory_urls: false  # need for inline html and dir navigation
 theme:
     name: material
+    # squidfunk.github.io/mkdocs-material/setup/changing-the-colors/
     palette:
-# https://squidfunk.github.io/mkdocs-material/setup/changing-the-colors/
         primary: cyan
         accent: cyan
     features:
         - header.autohide
+plugins:
+    - search
 markdown_extensions:
+    - def_list
+    - md_in_html
+    - tables
+    - pymdownx.inlinehilite
+    - pymdownx.superfences
     - pymdownx.arithmatex:
         generic: true
     - pymdownx.highlight:
         anchor_linenums: true
         line_spans: __span
         pygments_lang_class: true
-    - pymdownx.inlinehilite
-    - pymdownx.snippets
-    - pymdownx.superfences
-    - def_list
-    - md_in_html
-    - tables
+extra_css:
+    - css/extra.css
+    - https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css
 extra_javascript:
     - javascripts/katex.js
-    - https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js
-    - https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js
-extra_css:
-    - https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css
-    - css/extra.css
+    - https://cdn.jsdelivr.net/npm/katex/dist/katex.min.js
+    - https://cdn.jsdelivr.net/npm/katex/dist/contrib/auto-render.min.js
 exclude_docs: |
-    .ipynb_checkpoints
-    .git
+    .*
 nav:
     - Abstract: "index.md"
     - 1. Introduction: 'introduction.md'
