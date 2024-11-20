@@ -12,6 +12,7 @@ theme:
     palette:
         primary: cyan
         accent: cyan
+    font: false
     features:
         - header.autohide
 plugins:
