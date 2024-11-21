@@ -1,6 +1,6 @@
 # My personal notes from the Deep Learning course (CAP 421)
 
-*Last edited: 2024-02-27*
+*Last edited: 2024-11-21*
 
 This repository contains my work for this [course at INPE](http://www.inpe.br/posgraduacao/). The CAP421 course is part of the [Applied Artificial Intelligence Track](http://www.inpe.br/posgraduacao/cap/catalogo-disciplinas.php). 
 
@@ -12,7 +12,7 @@ Definition and applications of Deep Learning. Basics of Digital Image Processing
 
 ## Directories
 
-- [manuscript](manuscript) - Academic manuscript of the project developed in the course.
+- [project](project) directory: code and results of the course project, including the manuscript.
 
 
 ## References
