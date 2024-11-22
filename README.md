@@ -1,4 +1,4 @@
-# My personal notes from the Deep Learning course (CAP 421)
+# My personal notes from the Deep Learning (CAP 421)
 
 *Last edited: 2024-11-22*
 
@@ -10,7 +10,7 @@ Definition and applications of Deep Learning. Basics of Digital Image Processing
 
 ## Manuscript
 
-- Miranda, E. F. (2022). Solution of a One-Dimensional Viscous Burgers' Equation Using a Physics-Informed Neural Network and a Gaussian Quadrature Method [Manuscript]. DOI [10.5281/zenodo.10676900](https://zenodo.org/doi/10.5281/zenodo.10676900). [[HTML version](https://efurlanm.github.io/421/)] [[Sources](project)]
+- Miranda, E. F. (2022). Solution of a One-Dimensional Viscous Burgers' Equation Using a Physics-Informed Neural Network and a Gaussian Quadrature Method [Manuscript]. DOI [10.5281/zenodo.10676900](https://zenodo.org/doi/10.5281/zenodo.10676900). [[Online HTML version](https://efurlanm.github.io/421/)] [[Sources](project)]
 
 ## References
 
