@@ -1,19 +1,16 @@
 # My personal notes from the Deep Learning course (CAP 421)
 
-*Last edited: 2024-11-21*
+*Last edited: 2024-11-22*
 
 This repository contains my work for this [course at INPE](http://www.inpe.br/posgraduacao/). The CAP421 course is part of the [Applied Artificial Intelligence Track](http://www.inpe.br/posgraduacao/cap/catalogo-disciplinas.php). 
-
 
 ## Course summary
 
 Definition and applications of Deep Learning. Basics of Digital Image Processing. Convolution: Padding, Filter Dimension, Stride, Dilation. Review of Multilayer Perceptron Neural Networks with Backpropagation Algorithm. Loss Functions and Optimizers. Convolutional Neural Networks (CNNs). Convolutional, Pooling, and Fully Connected Layers. Activation Functions. Batch Normalization. Dropout. Learning Transfer. Data Augmentation. Hyperparameter Tuning. Examples of CNN Architectures. Recurrent Neural Networks (RNNs). Generative Models. Generative Adversarial Networks (GANs). Deep Reinforcement Learning.
 
+## Manuscript
 
-## Directories
-
-- [project](project) directory: code and results of the course project, including the manuscript.
-
+- Miranda, E. F. (2022). Solution of a One-Dimensional Viscous Burgers' Equation Using a Physics-Informed Neural Network and a Gaussian Quadrature Method [Manuscript]. DOI [10.5281/zenodo.10676900](https://zenodo.org/doi/10.5281/zenodo.10676900). [[HTML version](https://efurlanm.github.io/421/)] [[Sources](project)]
 
 ## References
 
@@ -28,5 +25,3 @@ Definition and applications of Deep Learning. Basics of Digital Image Processing
 - LECUN, Y.; BENGIO, Y.; HINTON, G. [Deep learning](https://www.nature.com/articles/nature14539). Nature, v. 521, n. 7553, p. 436–444, 28 maio 2015. https://doi.org/10.1038/nature14539
 - ROSA, RR; SILVA, JDS. [Topics of computational intelligence applied to space technologies](http://mtc-m16c.sid.inpe.br/col/urlib.net/www/2011/03.29.20.55/doc/mirrorget.cgi?languagebutton=en&metadatarepository=sid.inpe.br/mtc-m18@80/2008/12.19.13.18.16&index=0&serveraddress=mtc-m16c.sid.inpe.br%20804&choice=full&lastupdate=2021:04.14.18.47.25%20sid.inpe.br/mtc-m18@80/2008/03.17.15.17%20marciana%20%7BD%202008%7D&continue=no&keywords=&accent=yes&case=yes&imageflag=0&mirrorgetflag=1) (in Portuguese). 2008. ISBN: 978-85-17-00037-9
 - RUSSELL, SJ; NORVIG P. [Artificial Intelligence](http://aima.cs.berkeley.edu/): A Modern Approach. 2020. ISBN: 0134610997
-
-
