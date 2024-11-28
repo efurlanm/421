@@ -4,7 +4,7 @@ site_url: https://efurlanm.github.io/421/
 copyright: CC BY 4.0 License
 repo_name: "421"
 repo_url: http://github.com/efurlanm/421/
-docs_dir: docs-src
+docs_dir: src
 site_dir: docs
 theme:
     name: material
