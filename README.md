@@ -1,8 +1,10 @@
-# My personal notes from the Deep Learning (CAP 421)
+# Deep Learning (CAP 421)
 
 *Last edited: 2024-11-22*
 
-This repository contains my work for this [course at INPE](http://www.inpe.br/posgraduacao/). The CAP421 course is part of the [Applied Artificial Intelligence Track](http://www.inpe.br/posgraduacao/cap/catalogo-disciplinas.php). 
+My personal notes from the course and assignments.
+
+The CAP421 course is part of the [Applied Artificial Intelligence Track](http://www.inpe.br/posgraduacao/cap/catalogo-disciplinas.php). 
 
 ## Course summary
 
